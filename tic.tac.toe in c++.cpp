@@ -5,62 +5,62 @@ char square[9] = {'0','1','2','3','4','5','6','7','8'};
 int checkwin()
 {
     if (square[0] == square [1]  && square[1] == square[2] )
-		{	if ( square [0] == 'X' )			
+		{	
+	              if ( square [0] == 'X' )			
 			return 1;
 			else
 			return 2; 
 		}		
 		else
 		if (square[3] == square [4]  && square[4] == square[5] )
-			{	if ( square [3] == 'X' )			
+		{	
+			if ( square [3] == 'X' )			
 			return 1;
 			else
 			return 2; 
 		}
 		else
 		if (square[6] == square [7]  && square[7] == square[8] )
-			{	if ( square [6] == 'X' )			
+		{	
+			if ( square [6] == 'X' )			
 			return 1;
 			else
 			return 2; 
 		}
-		else
-		if (square[0] == square [3]  && square[3] == square[6] )
+		else if (square[0] == square [3]  && square[3] == square[6] )
+		{	
+			if ( square [0] == 'X' )			
+			return 1;
+			else
+			return 2; 
+		}
+		else if (square[1] == square [4]  && square[4] == square[7] )
+		{
+			if ( square [1] == 'X' )			
+			return 1;
+			else
+			return 2; 
+		}
+	      else if (square[2] == square [5]  && square[5] == square[8] )
+	      {
+		      if ( square [2] == 'X' )			
+			return 1;
+			else
+			return 2; 
+		}
+         else if (square[0] == square [4]  && square[4] == square[8] )
 			{	if ( square [0] == 'X' )			
 			return 1;
 			else
 			return 2; 
 		}
-		else
-		if (square[1] == square [4]  && square[4] == square[7] )
-			{	if ( square [1] == 'X' )			
-			return 1;
-			else
-			return 2; 
-		}
-	else
-		if (square[2] == square [5]  && square[5] == square[8] )
+	else if (square[2] == square [4]  && square[4] == square[6] )
 			{	if ( square [2] == 'X' )			
 			return 1;
 			else
 			return 2; 
 		}
-else
-		if (square[0] == square [4]  && square[4] == square[8] )
-			{	if ( square [0] == 'X' )			
-			return 1;
-			else
-			return 2; 
-		}
-	else
-		if (square[2] == square [4]  && square[4] == square[6] )
-			{	if ( square [2] == 'X' )			
-			return 1;
-			else
-			return 2; 
-		}
-	else
-		if (square[0] == square [3]  && square[3] == square[6] )
+	else if (square[0] == square [3]  && square[3] == square[6] )
 			{	if ( square [0] == 'X' )			
 			return 1;
 			else
@@ -78,29 +78,31 @@ else
 
 void mark(int player, int box)
 {
-	if(player == 1 && square[box]!= 'X' && square[box] != 'O'){
-        //updating the position for 'X' symbol if
-        //it is not already occupied
-        square[box] = 'X';
-        //turn = 'O';
-    }else if(player == 2 && square[box] != 'X' && square[box] != 'O'){
-        //updating the position for 'O' symbol if
-        //it is not already occupied
-        square[box] = 'O';
-        //turn = 'X';
-    }else {
-        //if input position already filled
-        cout<<"Box already filled!n Please choose another!!nn";
-        cout<< "\n Player " << player << "Enter ";
-		cin>> box;
-		mark( player, box);
-       // player_turn();
+	if(player == 1 && square[box]!= 'X' && square[box] != 'O')
+	{
+        	square[box] = 'X';
+
+        }
+	else if(player == 2 && square[box] != 'X' && square[box] != 'O')
+	{
+        
+        	square[box] = 'O';
+        
+        }
+	else 
+	{
+        
+       	 cout<<"Box already filled!n Please choose another!!nn";
+       	 cout<< "\n Player " << player << "Enter ";
+	 cin>> box;
+	 mark( player, box);
+       
     }
 }
 
 void display()
 {
-		cout << "Player 1 (X)  -  Player 2 (O)" << endl << endl;
+    cout << "Player 1 (X)  -  Player 2 (O)" << endl << endl;
     cout << endl;
 
     cout << "     |     |     " << endl;
